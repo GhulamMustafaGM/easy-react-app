@@ -29,18 +29,18 @@ const FetchInputValues = (e) => {
                         <form onSubmit={FetchInputValues}>
                             <div class="mb-3">
                                 <label for="name">Name</label>
-                                <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" />
+                                <input name="name" required type="text" class="form-control" id="name" placeholder="Enter name" />
                             </div>
 
                             <div class="mb-3">
                                 <label for="exampleInputEmail1">Email</label>
-                                <input Name="email" placeholder="Enter email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                <input Name="email" placeholder="Enter email" required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                             </div>
 
                             <div class="mb-3">
                                 <label for="message">Message</label>
-                                <textarea className="form-control" type="text" name="message" placeholder="Type message .." id="message" />
+                                <textarea className="form-control" required type="text" name="message" placeholder="Type message .." id="message" />
                             </div>
 
                             <button type="submit" class="btn btn-primary">Send</button>
