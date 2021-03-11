@@ -32,6 +32,12 @@ const FetchInputValues = (e) => {
                         <input Name="email" placeholder="Enter email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
+
+                    <div className="form-group">
+                        <lable for="message">Message</lable>
+                        <textarea type="text" name="message" placeholder="Type message .." />
+                    </div>
+                    
                     <button type="submit" class="btn btn-primary">Send</button>
                     </form>
                 </div>
