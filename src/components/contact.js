@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import myFirebase from '../config/firebase';
 
 const Contact = () => {
     const [name, setName] = useState('');
@@ -7,7 +8,11 @@ const Contact = () => {
 const FetchInputValues = (e) => {
     e.preventDefault()
     const {name, email} = e.target.elements;
-    alert(`${name.value} and $(email.value)`)
+    myFirebase.database().ref(`contacts/${email}`)
+    .set({
+        name:name.value,
+        email:email.value
+    })
 }
     return ( 
         <div className="container">
