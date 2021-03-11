@@ -7,11 +7,12 @@ const Contact = () => {
 
 const FetchInputValues = (e) => {
     e.preventDefault()
-    const {name, email} = e.target.elements;
+    const {name, email, message} = e.target.elements;
     myFirebase.database().ref(`contacts/${email}`)
     .set({
         name:name.value,
-        email:email.value
+        email:email.value,
+        message:message.value
     })
 }
     return ( 
@@ -35,9 +36,9 @@ const FetchInputValues = (e) => {
 
                     <div className="form-group">
                         <lable for="message">Message</lable>
-                        <textarea type="text" name="message" placeholder="Type message .." />
+                        <textarea type="text" name="message" placeholder="Type message .." id="message" />
                     </div>
-                    
+
                     <button type="submit" class="btn btn-primary">Send</button>
                     </form>
                 </div>
