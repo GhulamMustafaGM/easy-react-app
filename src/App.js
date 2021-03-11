@@ -3,6 +3,7 @@ import About from './components/about';
 import Contact from './components/contact';
 import Portfolio from './components/portfolio';
 import Home from './components/home';
+import Success from './components/success';
 import {
     BrowserRouter as Router,
     Route, Switch, Link
@@ -46,6 +47,7 @@ function App() {
                     <Route exact path="/about" component={About} />
                     <Route exact path="/contact" component={Contact} />
                     <Route exact path="/portfolio" component={Portfolio} />
+                    <Route exact path="/success" component={Success} />
                 </Switch>  
             </div>    
         </Router>

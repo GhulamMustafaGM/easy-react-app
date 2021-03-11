@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import myFirebase from '../config/firebase';
+import {useHistory} from 'react-router-dom';
 
 const Contact = () => {
+    let history = useHistory();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
 
@@ -9,11 +11,12 @@ const FetchInputValues = (e) => {
     e.preventDefault()
     const {name, email, message} = e.target.elements;
     myFirebase.database().ref(`contacts`)
-    .set({
+    .push({
         name:name.value,
         email:email.value,
         message:message.value
     })
+    history.push('/success');
 }
     return ( 
         <div className="container">
