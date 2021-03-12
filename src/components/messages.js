@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import myFirebase from '../config/firebase';
-
+import userLogo from '../images/user-logo.png';
 const Messages = () => {
     const [messages, setMessages] = useState([])
 
@@ -26,12 +26,17 @@ const Messages = () => {
                 {
                     messages.map((message) =>  {
                     return (
-                        <div>
-                        <p>{message.name}</p>
-                        <p>{message.email}</p>  
-                        <p>{message.message}</p>
-                        <hr />
-                    </div>
+                        <div className="media">
+                            <img src={userLogo} className="mr-3" style={{ 
+                                width:64,
+                                height:64
+                            }} />
+                            <div className="media-body">
+                                <h3 className="mt-0">{message.name}</h3>
+                                <h5 className="mt-0">{message.email}</h5>
+                                <p>{message.message}</p>
+                            </div>
+                        </div>
                     )
                     })
                 }
