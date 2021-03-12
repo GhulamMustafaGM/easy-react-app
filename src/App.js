@@ -8,6 +8,7 @@ import {
     BrowserRouter as Router,
     Route, Switch, Link
 } from 'react-router-dom';
+import Messages from './components/messages';
 
 function App() {
     return (
@@ -21,7 +22,7 @@ function App() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="collapse navbar-collapse" id="navbarSupportedContent"> 
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="/">Home</a>
@@ -31,6 +32,9 @@ function App() {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="/portfolio">Portfolio</a>
+                        </li>
+                        <li className="nav-item">
+                        <a className="nav-link" href="/messages">Messages</a>
                         </li>
                         <li className="nav-item">
                         <a className="nav-link" href="/contact">Contact</a>
@@ -48,6 +52,7 @@ function App() {
                     <Route exact path="/contact" component={Contact} />
                     <Route exact path="/portfolio" component={Portfolio} />
                     <Route exact path="/success" component={Success} />
+                    <Route exact path="/messages" component={Messages} />
                 </Switch>  
             </div>    
         </Router>
