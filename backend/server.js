@@ -1,8 +1,17 @@
 const express = require('express');
 const app = express();
 const keys = require('./config/keys');
+const mongoose = require('mongoose');
+
 const port = 3000;
 
+// connect to MongoDB
+mongoose.connect(keys.MongoDB_URI, {
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+}, () =>  {
+    console.log('Connected to MongoDB ..')
+});
 // routes
 app.get('/', (req, res) => {
     res.send('Hello World!');
