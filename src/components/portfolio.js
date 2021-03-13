@@ -27,8 +27,13 @@ const Portfolio = () => {
         return (
             <div>
                 <h1>Portfolio Page</h1>
-                <p>{users.name}</p>
-                <p>{users.age}</p>
+                <div className="card">
+                    <div className="card-body">
+                    <h3>{users.name}</h3>
+                    <p>{users.age}</p>
+                    <small>{users.date}</small>
+                    </div>
+                </div>
             </div>
         )
 }
