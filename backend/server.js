@@ -29,8 +29,17 @@ app.get('/contact', (req, res) => {
     });
 });
 
-// User route
+app.post('/users', (req, res) => {
+    User.find({})
+    .then((users) => {
+        res.send(users)
+    })
+    .catch((e) => {
+        console.log(e)
+    })
+})
 
+// User route
 app.get('/users', (req, res) => {
     const newUser = {
         name: 'John',
