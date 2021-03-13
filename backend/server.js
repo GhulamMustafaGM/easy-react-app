@@ -12,7 +12,7 @@ mongoose.connect(keys.MongoDB_URI, {
     useNewUrlParser:true,
     useUnifiedTopology:true
 }, () =>  {
-    console.log('Connected to MongoDB ..')
+    console.log('Connected to remote MongoDB ..')
 });
 // routes
 app.get('/', (req, res) => {
