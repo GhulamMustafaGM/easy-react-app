@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
+const keys = require('./config/keys');
 const port = 3000;
+
 // routes
 app.get('/', (req, res) => {
     res.send('Hello World!');
