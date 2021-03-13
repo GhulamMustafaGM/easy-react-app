@@ -10,7 +10,7 @@ const Portfolio = () => {
         age: null
     })
     useEffect(() => {
-        // making GET request
+        // making GET request to receive data
         axios.get('/users')
         .then((users) => {
             console.log(users.data)
@@ -22,6 +22,14 @@ const Portfolio = () => {
             })
         })
         .catch((e) => console.log(e))
+        // making POST request to send data
+        axios.post('/newUser', {
+            name:'Anderson',
+            age:35
+        })
+        .then((res) => {
+            console.log('Data sent!', res)
+        }).catch(e => console.log(e))
     }, [])
 
         return (

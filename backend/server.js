@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const keys = require('./config/keys');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 // Load models
 const User = require('./models/user');
@@ -14,6 +15,12 @@ mongoose.connect(keys.MongoDB_URI, {
 }, () =>  {
     console.log('Connected to remote MongoDB ..')
 });
+// setup body parser middleware 
+// parse application
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
+
 // routes
 app.get('/', (req, res) => {
     res.send('Hello World!');
@@ -37,6 +44,12 @@ app.post('/users', (req, res) => {
     .catch((e) => {
         console.log(e)
     })
+})
+
+// making POST request to receive data
+app.post('/newUser', (req, res) => {
+    console.log(req.body)
+    res.send(req.body)
 })
 
 // User route
