@@ -10,6 +10,12 @@ app.get('/about', (req, res) => {
     res.send('This is about route');
 });
 
+app.get('/contact', (req, res) => {
+    res.json({
+        'title': 'This is contact route'
+    });
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port!`);
 });
